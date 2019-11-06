@@ -92,11 +92,11 @@ Second, follow the instructions at [register a Web API with Azure AD B2C](https:
 Provide the following values for the Node.js Web API registration: 
 
 - Provide a descriptive Name for the Node.js Web API, for example, `My Test Node.js Web API`. You will identify this application by its Name whenever working in the Azure portal.
-- Mark **Yes** for the **Web App/Web API** setting for your application.
-- Set the **Reply URL** to `http://localhost:5000`. This is the port number that the Node.js Web API sample is configured to run on. 
-- Set the **AppID URI** to `hello`. This AppID URI is a unique identifier representing this Node.jS Web API. The AppID URI is used to construct the scopes that are configured in you single page application's code. For example, in this Node.js Web API sample, the scope will have the value `https://<your-tenant-name>.onmicrosoft.com/hello/demo.read` 
-- Create the application. 
-- Once the application is created, open your `My Test Node.js Web API` application and then open the **Published Scopes** window (in the left nav menu) and add the scope `demo.read` followed by a description `demoing a read scenario`. Click **Save**.
+- Mark **Web** setting under Redirect URI.
+- Set the **Redirect URI** to `http://localhost:5000`. This is the port number that the Node.js Web API sample is configured to run on. 
+- Register the application. 
+- Once the application is created and set the **Application ID URI** to `hello`. This is located in **Expose an API** location. This Application ID URI is a unique identifier representing this Node.jS Web API. The AppID URI is used to construct the scopes that are configured in you single page application's code. For example, in this Node.js Web API sample, the scope will have the value `https://<your-tenant-name>.onmicrosoft.com/hello/demo.read`.
+- Open the **Expose an API** window (in the left nav menu) and add the scope `demo.read` followed by a description `demoing a read scenario`. Click **Save**.
 
 Third, in the `index.html` file of the Node.js Web API sample, update the following variables to refer to your Web API registration.  
 
@@ -126,10 +126,10 @@ Next, you need to [register your single page application in your B2C tenant](htt
 Provide the following values for the Single Page Application registration: 
 
 - Provide a descriptive Name for the single page application, for example, `My Test SPA`. You will identify this application by its Name whenever working in the Azure portal.
-- Mark **Yes** for the **Web App/Web API** setting for your application.
-- Set the **Reply URL** for your app to `http://localhost:6420`. This sample provided in this repository is configured to run on port 6420.
+- Mark **Web** setting under Redirect URI.
+- Set the **Redirect URI** for your app to `http://localhost:6420`. This sample provided in this repository is configured to run on port 6420.
 - Create the application. 
-- Once the application is created, open your `My Test SPA` and open the **API Access** window (in the left nav menu). Click **Add** and select the name of the Node.js Web API you registered previously, `My Test Node.js Web API`. Select the scope(s) you defined previously, for example, `demo.read` and hit **Save**.
+- Once the application is created, open your `My Test SPA` and open the **API Permissions** window (in the left nav menu). Click **Add a permission** and select the name of the Node.js Web API you registered previously under , `My Test Node.js Web API`. Select the scope(s) you defined previously, for example, `demo.read` and hit **Save**.
 
 ### Step 5: Configure the sample code to use your Azure AD B2C tenant
 
